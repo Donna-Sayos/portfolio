@@ -40,7 +40,7 @@ export default function NavBar() {
 
         <Navbar.Toggle className="nav-icon" />
         <Navbar.Collapse className="nav-links justify-content-end">
-          <Nav>
+          <Nav className="d-flex flex-wrap">
             <Nav.Link className="a-link" as={Link} to="/aboutMe">
               About Me
             </Nav.Link>
