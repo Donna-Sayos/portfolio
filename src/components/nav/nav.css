@@ -4,7 +4,7 @@
 }
 
 #dark {
-    background-color: #424549;
+    background-color: #777777;
 }
 
 #light {
@@ -16,4 +16,17 @@
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
     filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.1));
     margin-left: 0.5em;
+}
+
+.coloring{
+    color: black;
+}
+
+.a-link {
+    color: #d0d0d0;
+    font-weight: bold;
+}
+
+.a-link:active {
+    color: red;
 }

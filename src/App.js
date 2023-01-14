@@ -1,10 +1,10 @@
 import "./App.css";
-import Nav from "./components/nav/Nav";
+import NavBar from "./components/nav/NavBar";
 
 export default function App() {
   return (
     <div className="App">
-      <Nav />
+      <NavBar />
     </div>
   );
 }
