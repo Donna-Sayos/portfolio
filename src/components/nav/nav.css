@@ -1,14 +1,5 @@
-.nav {
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4);
-    filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.2));
-}
-
-#dark {
-    background-color: #777777;
-}
-
-#light {
-    background-color: #d6c7c7;
+.nav-links {
+    padding: 5px;
 }
 
 .logo {
@@ -18,15 +9,40 @@
     margin-left: 0.5em;
 }
 
-.coloring{
-    color: black;
+.nav-icon {
+    color: #f9f9f9;
 }
 
-.a-link {
-    color: #d0d0d0;
+#dark .nav {
+    background-color: #777777;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4);
+    filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.2));
+}
+
+#dark .a-link {
     font-weight: bold;
+    font-size: large;
 }
 
-.a-link:active {
-    color: red;
+#dark .dropdown-menu { 
+    background-color: #999999;
+}
+
+#dark .dropdown-menu .dropdown-item:active { 
+    background-color: #999999;
+}
+
+#light .nav {
+    background-color: #d6c7c7;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4);
+    filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.2));
+}
+
+#light .a-link {
+    font-weight: bold;
+    font-size: large;
+}
+
+#light .dropdown-menu { 
+    background-color: #f9f1f1; 
 }

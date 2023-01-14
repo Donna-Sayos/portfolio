@@ -1,74 +1,102 @@
+// import { useState, useLayoutEffect } from "react";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import LOGO from "../assets/logo_.png";
 import "./nav.css";
 
 export default function NavBar() {
+  // const [variant, setVariant] = useState("light");
+  
+  // useLayoutEffect(() => {
+  //   if (id === "dark") {
+  //     setVariant("dark");
+  //   } else {
+  //     setVariant("light");
+  //   }
+  // }, [])
+
   return (
-    <>
+    <div id="dark">
       <Navbar
-        id="dark"
         className="nav"
         sticky="top"
         expand="sm"
         variant="dark"
         collapseOnSelect
       >
-        <Navbar.Brand>
-          <Link to="/aboutMe">
-            <img
-              className="logo"
-              src={LOGO}
-              width={60}
-              height={60}
-              alt="website logo"
-            />
-          </Link>
+        <Navbar.Brand as={Link} to="/aboutMe">
+          <img
+            className="logo"
+            src={LOGO}
+            width={60}
+            height={60}
+            alt="website logo"
+          />
         </Navbar.Brand>
 
-        <Navbar.Toggle className="coloring" />
-        <Navbar.Collapse>
+        <Navbar.Toggle className="nav-icon"/>
+        <Navbar.Collapse className="nav-links justify-content-end">
           <Nav>
-            <Nav.Link>
-              <Link className="a-link" to="/aboutMe">About Me</Link>
+            <Nav.Link className="a-link" as={Link} to="/aboutMe">
+              About Me
             </Nav.Link>
 
-            <Nav.Link>
-              <Link className="a-link" to="/skills">Skills</Link>
+            <Nav.Link className="a-link" as={Link} to="/skills">
+              Skills
             </Nav.Link>
 
-            <NavDropdown className="a-link" title="Projects">
-              <NavDropdown.Item>
-                <Link to="/projects/hangOut">HangOut Mobile App</Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
-                <Link to="/projects/ready-to-roomba">Ready-to-Roomba</Link>
+            <NavDropdown
+              className="a-link"
+              as={Link}
+              to="/projects"
+              title="Projects"
+            >
+              <NavDropdown.Item
+                className="a-link"
+                as={Link}
+                to="/projects/major"
+              >
+                Major
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item>
-                <Link to="/projects/chat-app">Chat App</Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
-                <Link to="/projects/price-tracker">Price Tracker</Link>
+              <NavDropdown.Item
+                className="a-link"
+                as={Link}
+                to="/projects/minor"
+              >
+                Minor
               </NavDropdown.Item>
             </NavDropdown>
 
-            <NavDropdown className="a-link" title="Testimonials">
-              <NavDropdown.Item>
-                <Link to="/testimonials/mentors">Mentors</Link>
+            <NavDropdown
+              className="a-link"
+              as={Link}
+              to="/testimonials"
+              title="Testimonials"
+            >
+              <NavDropdown.Item
+                className="a-link"
+                as={Link}
+                to="/testimonials/mentors"
+              >
+                Mentors
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item>
-                <Link to="/testimonials/peers">Peers</Link>
+              <NavDropdown.Item
+                className="a-link"
+                as={Link}
+                to="/testimonials/peers"
+              >
+                Peers
               </NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link>
-              <Link className="a-link" to="/socials">Socials</Link>
+            <Nav.Link className="a-link" as={Link} to="/socials">
+              Socials
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-    </>
+    </div>
   );
 }
