@@ -1,8 +1,10 @@
+import { useThemeContext } from "./provider/ThemeProvider";
 import NavBar from "./components/nav/NavBar";
 
 export default function App() {
+  const { theme } = useThemeContext();
   return (
-    <div className="App">
+    <div id={theme}>
       <NavBar />
     </div>
   );

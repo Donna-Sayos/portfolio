@@ -1,27 +1,31 @@
-// import { useState, useLayoutEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useThemeContext } from "../../provider/ThemeProvider";
+import ReactSwitch from "react-switch";
+import { FaLightbulb } from "react-icons/fa";
 import LOGO from "../assets/logo_.png";
 import "./nav.css";
 
 export default function NavBar() {
-  // const [variant, setVariant] = useState("light");
-  
-  // useLayoutEffect(() => {
-  //   if (id === "dark") {
-  //     setVariant("dark");
-  //   } else {
-  //     setVariant("light");
-  //   }
-  // }, [])
+  const [variant, setVariant] = useState("light");
+  const { theme, toggleTheme } = useThemeContext();
+
+  useLayoutEffect(() => {
+    if (theme === "dark") {
+      setVariant("dark");
+    } else {
+      setVariant("light");
+    }
+  }, [theme]);
 
   return (
-    <div id="dark">
+    <div id={theme}>
       <Navbar
         className="nav"
         sticky="top"
         expand="sm"
-        variant="dark"
+        variant={variant}
         collapseOnSelect
       >
         <Navbar.Brand as={Link} to="/aboutMe">
@@ -34,7 +38,7 @@ export default function NavBar() {
           />
         </Navbar.Brand>
 
-        <Navbar.Toggle className="nav-icon"/>
+        <Navbar.Toggle className="nav-icon" />
         <Navbar.Collapse className="nav-links justify-content-end">
           <Nav>
             <Nav.Link className="a-link" as={Link} to="/aboutMe">
@@ -93,6 +97,22 @@ export default function NavBar() {
 
             <Nav.Link className="a-link" as={Link} to="/socials">
               Socials
+            </Nav.Link>
+
+            <Nav.Link>
+              <div className="switch">
+                <label style={{ paddingLeft: "5px", paddingRight: "5px" }}>
+                  {theme === "light" ? (
+                    <FaLightbulb size={25} color="#fdfe02" />
+                  ) : (
+                    <FaLightbulb size={25} color="black" />
+                  )}
+                </label>
+                <ReactSwitch
+                  onChange={toggleTheme}
+                  checked={theme === "dark"}
+                />
+              </div>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
