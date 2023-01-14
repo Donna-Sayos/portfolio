@@ -1,7 +1,10 @@
-import React from 'react';
+import React from "react";
+import "./skills.css";
 
 export default function Skills() {
   return (
-    <div>Skills</div>
-  )
-};
+    <div className="container">
+      <div className="content">Skills</div>
+    </div>
+  );
+}

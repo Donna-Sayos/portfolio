@@ -13,9 +13,7 @@ code {
 }
 
 .content {
-  margin-top: 50px;
-  padding: 12px;
-  height: 3000px;
+  margin-top: 150px;
 }
 
 a {
@@ -28,4 +26,9 @@ a {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+}
+
+#nav {
+  position: fixed;
+  width: 100vw;
 }

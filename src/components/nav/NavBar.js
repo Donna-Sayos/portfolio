@@ -23,7 +23,6 @@ export default function NavBar() {
     <div id={theme}>
       <Navbar
         className="nav"
-        sticky="top"
         expand="sm"
         variant={variant}
         collapseOnSelect
@@ -40,7 +39,7 @@ export default function NavBar() {
 
         <Navbar.Toggle className="nav-icon" />
         <Navbar.Collapse className="nav-links justify-content-end">
-          <Nav className="d-flex flex-wrap">
+          <Nav className="nav-pos d-flex flex-wrap">
             <Nav.Link className="a-link" as={Link} to="/aboutMe">
               About Me
             </Nav.Link>
@@ -110,7 +109,10 @@ export default function NavBar() {
                 </label>
                 <ReactSwitch
                   onChange={toggleTheme}
-                  checked={theme === "dark"}
+                  checked={theme === "light"}
+                  onColor="#eed9c4"
+                  offColor="#5d5d5d"
+                  activeBoxShadow="0 0 2px 3px #fdfe02"
                 />
               </div>
             </Nav.Link>

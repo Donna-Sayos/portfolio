@@ -1,11 +1,11 @@
 import { useThemeContext } from "./provider/ThemeProvider";
-import NavBar from "./components/nav/NavBar";
+import AppRoutes from "./AppRoutes";
 
 export default function App() {
   const { theme } = useThemeContext();
   return (
     <div id={theme}>
-      <NavBar />
+      <AppRoutes />
     </div>
   );
 }
