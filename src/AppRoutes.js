@@ -12,9 +12,9 @@ import Socials from "./components/socials/Socials";
 export default function AppRoutes() {
   return (
     <>
-      <nav id="nav">
+      <div id="nav">
         <NavBar />
-      </nav>
+      </div>
       <Routes>
         <Route path="/aboutMe" element={<AboutMe />} />
         <Route path="/skills" element={<Skills />} />

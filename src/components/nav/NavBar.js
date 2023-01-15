@@ -1,3 +1,5 @@
+import "./nav.css";
+import "bootstrap/dist/css/bootstrap.css";
 import { useState, useLayoutEffect } from "react";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -5,7 +7,6 @@ import { useThemeContext } from "../../provider/ThemeProvider";
 import ReactSwitch from "react-switch";
 import { FaLightbulb } from "react-icons/fa";
 import LOGO from "../assets/logo_.png";
-import "./nav.css";
 
 export default function NavBar() {
   const [variant, setVariant] = useState("light");
@@ -23,41 +24,44 @@ export default function NavBar() {
     <div id={theme}>
       <Navbar
         className="nav"
+        collapseOnSelect
+        sticky="top"
         expand="sm"
         variant={variant}
-        collapseOnSelect
       >
         <Navbar.Brand as={Link} to="/aboutMe">
           <img
             className="logo"
             src={LOGO}
-            width={60}
-            height={60}
+            width={65}
+            height={65}
             alt="website logo"
           />
         </Navbar.Brand>
 
-        <Navbar.Toggle className="nav-icon" />
-        <Navbar.Collapse className="nav-links justify-content-end">
-          <Nav className="nav-pos d-flex flex-wrap">
-            <Nav.Link className="a-link" as={Link} to="/aboutMe">
+        <Navbar.Toggle
+          className="nav-icon"
+          aria-controls="responsive-navbar-nav"
+        />
+        <Navbar.Collapse
+          id="responsive-navbar-nav"
+          className="nav-links d-flex justify-content-evenly"
+        >
+          <Nav className="nav-pos flex-wrap">
+            <Nav.Link className="a-link" as={Link} to="/aboutMe" eventKey="1">
               About Me
             </Nav.Link>
 
-            <Nav.Link className="a-link" as={Link} to="/skills">
+            <Nav.Link className="a-link" as={Link} to="/skills" eventKey="2">
               Skills
             </Nav.Link>
 
-            <NavDropdown
-              className="a-link"
-              as={Link}
-              to="/projects"
-              title="Projects"
-            >
+            <NavDropdown className="a-link" eventKey="3" title="Projects">
               <NavDropdown.Item
                 className="a-link"
                 as={Link}
                 to="/projects/major"
+                eventKey="3.1"
               >
                 Major
               </NavDropdown.Item>
@@ -66,21 +70,18 @@ export default function NavBar() {
                 className="a-link"
                 as={Link}
                 to="/projects/minor"
+                eventKey="3.2"
               >
                 Minor
               </NavDropdown.Item>
             </NavDropdown>
 
-            <NavDropdown
-              className="a-link"
-              as={Link}
-              to="/testimonials"
-              title="Testimonials"
-            >
+            <NavDropdown className="a-link" eventKey="4" title="Testimonials">
               <NavDropdown.Item
                 className="a-link"
                 as={Link}
                 to="/testimonials/mentors"
+                eventKey="4.1"
               >
                 Mentors
               </NavDropdown.Item>
@@ -89,18 +90,19 @@ export default function NavBar() {
                 className="a-link"
                 as={Link}
                 to="/testimonials/peers"
+                eventKey="4.2"
               >
                 Peers
               </NavDropdown.Item>
             </NavDropdown>
 
-            <Nav.Link className="a-link" as={Link} to="/socials">
+            <Nav.Link className="a-link" as={Link} to="/socials" eventKey="5">
               Socials
             </Nav.Link>
 
-            <Nav.Link>
+            <Nav.Link eventKey="6">
               <div className="switch">
-                <label style={{ paddingLeft: "5px", paddingRight: "5px" }}>
+                <label style={{ paddingRight: "5px" }}>
                   {theme === "light" ? (
                     <FaLightbulb size={25} color="#fdfe02" />
                   ) : (

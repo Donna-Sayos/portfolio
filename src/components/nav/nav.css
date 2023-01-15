@@ -10,7 +10,7 @@
     border-radius: 50%;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
     filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.1));
-    margin-left: 0.5em;
+    margin-left: 1.5em;
 }
 
 .nav-icon {
@@ -26,11 +26,13 @@
 
 #dark .a-link {
     font-weight: bold;
-    font-size: large;
+    font-size: larger;
 }
 
 #dark .dropdown-menu { 
     background-color: #999999;
+    margin-top: 1.4rem;
+    left: -1rem;
 }
 
 #dark .dropdown-menu .dropdown-item:active { 
@@ -45,7 +47,7 @@
 
 #light .a-link {
     font-weight: bold;
-    font-size: large;
+    font-size: larger;
 }
 
 #light .dropdown-menu { 
